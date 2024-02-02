@@ -1,19 +1,18 @@
-import factory.FastGameFactory;
-import factory.GameFactory;
-import factory.NormalGameFactory;
-import game.Game;
-import minion.FastGameMinion;
-import minion.NormalGameMinion;
-import nexus.FastGameNexus;
-import nexus.NormalGameNexus;
-import tower.FastGameTower;
-import tower.NormalGameTower;
+import game.GameType;
+import singleton.GameCreatorSingleton;
 
-public class FactoryMethodApplication {
+public class SingletonApplication {
 
-    public static void main(String[] args) {
-        var normalGame = new NormalGameFactory().createGame();
-        var fastGame = new FastGameFactory().createGame();
+    public static void main(String[] args) throws Exception {
+        var gameCreatorSingleton = GameCreatorSingleton.getGameCreator();
+        var normalGame = gameCreatorSingleton.createGame(GameType.NORMAL_GAME);
+        var fastGame = gameCreatorSingleton.createGame(GameType.FAST_GAME);
+
+        var gameCreatorSingleton2 = GameCreatorSingleton.getGameCreator();
+
+        if(gameCreatorSingleton2 == gameCreatorSingleton) {
+            System.out.println("The game creators are the same");
+        }
 
         System.out.println("Starting Normal Game");
         System.out.println("Minions -> ");
