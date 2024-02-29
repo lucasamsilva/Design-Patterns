@@ -67,8 +67,4 @@ Contributions to this repository are welcome! If you'd like to add a new impleme
 5. Push to the branch (`git push origin feature/improvement`).
 6. Create a new Pull Request.
 
-Please ensure your code follows the repository's coding conventions and includes appropriate documentation.
-
-## License
-
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Please ensure your code follows the repository's coding conventions and includes appropriate documentati
